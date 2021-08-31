@@ -19,7 +19,7 @@ def show(stack):
   else:
     print("Stack Contains:",stack)
 
-choice=0
+
 stack=create_stack()
 while(True):
   print("""1. Push
