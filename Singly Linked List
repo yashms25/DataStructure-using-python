@@ -50,21 +50,21 @@ class LinkedList:
         elem = int(input("Enter number after which insertion should be done:"))
         new = Node(data)
         self.current = self.first
-        self.follow = None
         while(self.current.data != elem and self.current ):
-          self.follow = self.current
           self.current = self.current.next
           if not self.current:
             break
         if not self.current:
           print("Element not Found")
         else:
-          if self.current == self.first:
-            new.next = self.current
-            self.first = new
+          self.ahead = self.current.next
+          if self.current == self.last:
+            self.last.next = new
+            new.next = None
+            self.last = new
           else:
-            self.follow.next = new
-            new.next = self.current
+            self.current.next = new
+            new.next = self.ahead
     
     def delete(self):
        if self.first == None:
