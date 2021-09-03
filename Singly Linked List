@@ -78,10 +78,10 @@ class LinkedList:
            self.current = self.current.next
            if not self.current:
              break
-           self.ahead = self.current.next
          if not self.current:
            print("Element not Found")
          else:
+           self.ahead = self.current.next
            if self.current == self.first and self.current == self.last:
              self.first = None
            elif(self.current == self.first):
@@ -90,7 +90,7 @@ class LinkedList:
              self.last = self.follow
              self.last.next = None
            else:
-             self.ahead = self.follow.next
+             self.follow.next = self.ahead
    
     def show(self):
         if self.first == None:
